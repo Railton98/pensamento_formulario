@@ -3,7 +3,7 @@ import 'package:pensamento_formulario/app/modules/shared/models/sentimento_model
 import 'package:rxdart/rxdart.dart';
 import 'package:rxdart/subjects.dart';
 
-class SentimentoBloc extends BlocBase {
+class SharedBloc extends BlocBase {
   BehaviorSubject<List<SentimentoModel>> _listController =
       BehaviorSubject.seeded([]);
 

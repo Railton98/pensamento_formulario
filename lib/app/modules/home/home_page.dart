@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pensamento_formulario/app/app_module.dart';
-import 'package:pensamento_formulario/app/modules/shared/blocs/sentimento_bloc.dart';
+import 'package:pensamento_formulario/app/modules/shared/blocs/shared_bloc.dart';
 import 'package:pensamento_formulario/app/modules/shared/models/sentimento_model.dart';
 import 'package:pensamento_formulario/app/modules/shared/widgets/smille.dart';
 
@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final blocSentimento = AppModule.to.getBloc<SentimentoBloc>();
+  final blocSentimento = AppModule.to.getBloc<SharedBloc>();
 
   @override
   Widget build(BuildContext context) {

@@ -1,20 +1,20 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bloc_pattern/bloc_pattern_test.dart';
 
-import 'package:pensamento_formulario/app/modules/shared/blocs/sentimento_bloc.dart';
+import 'package:pensamento_formulario/app/modules/shared/blocs/shared_bloc.dart';
 import 'package:pensamento_formulario/app/app_module.dart';
 
 void main() {
   initModule(AppModule());
-  SentimentoBloc bloc;
+  SharedBloc bloc;
 
   setUp(() {
-    bloc = AppModule.to.bloc<SentimentoBloc>();
+    bloc = AppModule.to.bloc<SharedBloc>();
   });
 
   group('SentimentoBloc Test', () {
     test("First Test", () {
-      expect(bloc, isInstanceOf<SentimentoBloc>());
+      expect(bloc, isInstanceOf<SharedBloc>());
     });
   });
 }
