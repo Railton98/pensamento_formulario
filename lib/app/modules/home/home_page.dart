@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pensamento_formulario/app/app_module.dart';
+import 'package:pensamento_formulario/app/modules/sentimento/sentimento_module.dart';
 import 'package:pensamento_formulario/app/modules/shared/blocs/shared_bloc.dart';
 import 'package:pensamento_formulario/app/modules/shared/models/sentimento_model.dart';
 import 'package:pensamento_formulario/app/modules/shared/widgets/smille.dart';
@@ -17,6 +18,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Pensamentos"),
+      ),
+      bottomNavigationBar: RaisedButton(
+        color: Theme.of(context).primaryColor,
+        onPressed: AppModule.to.bloc<SharedBloc>().expulgar,
+        child: Text("EXPULGAR"),
       ),
       body: StreamBuilder<List<SentimentoModel>>(
         stream: blocSentimento.listOut,
@@ -60,7 +66,14 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => SentimentoModule(),
+            ),
+          );
+        },
       ),
     );
   }

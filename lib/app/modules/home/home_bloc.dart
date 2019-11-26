@@ -1,20 +1,9 @@
-import 'package:bloc/bloc.dart';
+import 'package:bloc_pattern/bloc_pattern.dart';
 
-enum HomeEvent { increment, decrement }
-
-class HomeBloc extends Bloc<HomeEvent, int> {
+class HomeBloc extends BlocBase {
+  //dispose will be called automatically by closing its streams
   @override
-  int get initialState => 0;
-
-  @override
-  Stream<int> mapEventToState(HomeEvent event) async* {
-    switch (event) {
-      case HomeEvent.decrement:
-        yield state - 1;
-        break;
-      case HomeEvent.increment:
-        yield state + 1;
-        break;
-    }
+  void dispose() {
+    super.dispose();
   }
 }
