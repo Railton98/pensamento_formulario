@@ -9,6 +9,10 @@ class SharedBloc extends BlocBase {
 
   Observable<List<SentimentoModel>> get listOut => _listController.stream;
 
+  expulgar() {
+    _listController.add([]);
+  }
+
   addNovoSentimento(SentimentoModel model) {
     _listController.value.add(model);
     _listController.add(_listController.value);
