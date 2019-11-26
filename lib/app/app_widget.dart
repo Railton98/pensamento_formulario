@@ -10,7 +10,8 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xff007989),
         accentColor: Color(0xff007989),
-        fontFamily: 'Ubuntu',
+        fontFamily: 'Fira Code',
+        // fontFamily: 'Ubuntu',
       ),
       home: HomeModule(),
     );
