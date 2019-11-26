@@ -5,8 +5,7 @@ import 'package:pensamento_formulario/app/modules/sentimento/sentimento_page.dar
 
 main() {
   testWidgets('SentimentoPage has title', (WidgetTester tester) async {
-    await tester
-        .pumpWidget(buildTestableWidget(SentimentoPage(title: 'Sentimento')));
+    await tester.pumpWidget(buildTestableWidget(SentimentoPage()));
     final titleFinder = find.text('Sentimento');
     expect(titleFinder, findsOneWidget);
   });

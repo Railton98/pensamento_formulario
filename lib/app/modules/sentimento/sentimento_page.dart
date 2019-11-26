@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pensamento_formulario/app/modules/sentimento/pages/descrever/descrever_page.dart';
+import 'package:pensamento_formulario/app/modules/sentimento/pages/status/status_page.dart';
+import 'package:pensamento_formulario/app/modules/sentimento/sentimento_bloc.dart';
+import 'package:pensamento_formulario/app/modules/sentimento/sentimento_module.dart';
 
 class SentimentoPage extends StatefulWidget {
-  final String title;
-  const SentimentoPage({Key key, this.title = "Sentimento"}) : super(key: key);
-
   @override
   _SentimentoPageState createState() => _SentimentoPageState();
 }
@@ -13,10 +14,14 @@ class _SentimentoPageState extends State<SentimentoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Novo"),
       ),
-      body: Column(
-        children: <Widget>[],
+      body: PageView(
+        controller: SentimentoModule.to.bloc<SentimentoBloc>().pageController,
+        children: <Widget>[
+          StatusPage(),
+          DescreverPage(),
+        ],
       ),
     );
   }
